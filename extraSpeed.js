@@ -1,6 +1,9 @@
 // ==UserScript==
 // @name         bilibili 视频3倍速
-// @version      2025-10-24.1
+// @version      2.0
+// @updateURL    https://github.com/ivxoxvi/bilibil-speed-rate/blob/main/extraSpeed.js
+// @downloadURL  https://github.com/ivxoxvi/bilibil-speed-rate/blob/main/extraSpeed.js
+// @run-at       document-end
 // @description  无侵入的解锁哔哩哔哩视频三倍速，直接在倍速中选择3x即可。
 // @author       vxoxv
 // @match        https://www.bilibili.com/video/*
