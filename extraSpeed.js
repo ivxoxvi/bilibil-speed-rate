@@ -14,19 +14,18 @@
   const userRate = [2.5, 3.0];
 
   const rateMenuSelector = ".bpx-player-ctrl-playbackrate-menu";
-  const rateItemSelector = ".bpx-player-ctrl-playbackrate-menu-item";
-  const activeRateItemSelector = ".bpx-state-active";
-  const videoSelector = ".bpx-player-video-wrap";
 
   window.addEventListener("load", () => {
-    scriptLog("first try");
-    let done = firstTry();
-    if (done) {
-      scriptLog("done");
-    } else {
-      scriptLog("add observer");
-      addMutationObserver();
-    }
+    setTimeout(() => {
+      scriptLog("first try");
+      let done = firstTry();
+      if (done) {
+        scriptLog("done");
+      } else {
+        scriptLog("add observer");
+        addMutationObserver();
+      }
+    }, 5000);
   });
 
   function scriptLog(text, color = "skyblue") {
@@ -75,13 +74,14 @@
             if (!menu) {
               continue;
             }
-            let template = node.firstElementChild;
+            scriptLog("catch it");
+            let template = menu.firstElementChild;
             userRate.forEach((rate) => {
               let item = template.cloneNode(true);
               item.innerText = `${rate}x`;
               item.dataset.value = rate;
               item.style.color = "red";
-              node.appendChild(item);
+              menu.appendChild(item);
             });
             observer.disconnect();
           }
